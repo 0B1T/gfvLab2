@@ -13,7 +13,7 @@
 <v>Output</v>
 </TreeKeys>
 <TreeStates>
-<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="">
+<CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237 type_name="CyDesigner.Common.Base.Controls.CyTreeViewState" version="1" SelectedNodeId="GFV_LAB2\I2C_Experiment\I2C_Experiment.cydwr\Pins">
 <ExpandedNodeIds>
 <v>GFV_LAB2</v>
 <v>GFV_LAB2\I2C_Experiment</v>
@@ -30,10 +30,16 @@
 <v>GFV_LAB2\I2C_Experiment\I2C_Experiment.cydwr\EEPROM</v>
 <v>GFV_LAB2\I2C_Experiment\Header Files</v>
 <v>GFV_LAB2\I2C_Experiment\Header Files\cyapicallbacks.h</v>
+<v>GFV_LAB2\I2C_Experiment\Header Files\readTemp.h</v>
+<v>GFV_LAB2\I2C_Experiment\Header Files\twoComplementConverter.h</v>
 <v>GFV_LAB2\I2C_Experiment\Header Files\ui.h</v>
+<v>GFV_LAB2\I2C_Experiment\Header Files\writeTempToUART.h</v>
 <v>GFV_LAB2\I2C_Experiment\Source Files</v>
 <v>GFV_LAB2\I2C_Experiment\Source Files\main.c</v>
+<v>GFV_LAB2\I2C_Experiment\Source Files\readTemp.c</v>
+<v>GFV_LAB2\I2C_Experiment\Source Files\twoComplementConverter.c</v>
 <v>GFV_LAB2\I2C_Experiment\Source Files\ui.c</v>
+<v>GFV_LAB2\I2C_Experiment\Source Files\writeTempToUART.c</v>
 <v>GFV_LAB2\I2C_Experiment\Generated_Source\PSoC5</v>
 <v>GFV_LAB2\SPI_Experiment\TopDesign</v>
 <v>GFV_LAB2\SPI_Experiment\SPI_Experiment.cydwr</v>
@@ -68,10 +74,16 @@
 <v>GFV_LAB2\I2C_Experiment\I2C_Experiment.cydwr\EEPROM</v>
 <v>GFV_LAB2\I2C_Experiment\Header Files</v>
 <v>GFV_LAB2\I2C_Experiment\Header Files\cyapicallbacks.h</v>
+<v>GFV_LAB2\I2C_Experiment\Header Files\readTemp.h</v>
+<v>GFV_LAB2\I2C_Experiment\Header Files\twoComplementConverter.h</v>
 <v>GFV_LAB2\I2C_Experiment\Header Files\ui.h</v>
+<v>GFV_LAB2\I2C_Experiment\Header Files\writeTempToUART.h</v>
 <v>GFV_LAB2\I2C_Experiment\Source Files</v>
 <v>GFV_LAB2\I2C_Experiment\Source Files\main.c</v>
+<v>GFV_LAB2\I2C_Experiment\Source Files\readTemp.c</v>
+<v>GFV_LAB2\I2C_Experiment\Source Files\twoComplementConverter.c</v>
 <v>GFV_LAB2\I2C_Experiment\Source Files\ui.c</v>
+<v>GFV_LAB2\I2C_Experiment\Source Files\writeTempToUART.c</v>
 <v>GFV_LAB2\I2C_Experiment\Generated_Source</v>
 <v>GFV_LAB2\SPI_Experiment</v>
 </VisibleNodeIds>
@@ -121,14 +133,17 @@
 <v>GFV_LAB2\I2C_Experiment\CortexM3\ARM_GCC_541\Debug\Listing Files\I2C_1_PM.lst</v>
 <v>GFV_LAB2\I2C_Experiment\CortexM3\ARM_GCC_541\Debug\Listing Files\I2C_1_SLAVE.lst</v>
 <v>GFV_LAB2\I2C_Experiment\CortexM3\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>GFV_LAB2\I2C_Experiment\CortexM3\ARM_GCC_541\Debug\Listing Files\readTemp.lst</v>
 <v>GFV_LAB2\I2C_Experiment\CortexM3\ARM_GCC_541\Debug\Listing Files\SCL_1.lst</v>
 <v>GFV_LAB2\I2C_Experiment\CortexM3\ARM_GCC_541\Debug\Listing Files\SDA_1.lst</v>
+<v>GFV_LAB2\I2C_Experiment\CortexM3\ARM_GCC_541\Debug\Listing Files\twoComplementConverter.lst</v>
 <v>GFV_LAB2\I2C_Experiment\CortexM3\ARM_GCC_541\Debug\Listing Files\UART_1.lst</v>
 <v>GFV_LAB2\I2C_Experiment\CortexM3\ARM_GCC_541\Debug\Listing Files\UART_1_BOOT.lst</v>
 <v>GFV_LAB2\I2C_Experiment\CortexM3\ARM_GCC_541\Debug\Listing Files\UART_1_INT.lst</v>
 <v>GFV_LAB2\I2C_Experiment\CortexM3\ARM_GCC_541\Debug\Listing Files\UART_1_IntClock.lst</v>
 <v>GFV_LAB2\I2C_Experiment\CortexM3\ARM_GCC_541\Debug\Listing Files\UART_1_PM.lst</v>
 <v>GFV_LAB2\I2C_Experiment\CortexM3\ARM_GCC_541\Debug\Listing Files\ui.lst</v>
+<v>GFV_LAB2\I2C_Experiment\CortexM3\ARM_GCC_541\Debug\Listing Files\writeTempToUART.lst</v>
 <v>GFV_LAB2\I2C_Experiment\CortexM3\ARM_GCC_541\Debug\I2C_Experiment.elf</v>
 <v>GFV_LAB2\I2C_Experiment\CortexM3\ARM_GCC_541\Debug\I2C_Experiment.hex</v>
 <v>GFV_LAB2\I2C_Experiment\CortexM3\ARM_GCC_541\Debug\I2C_Experiment.map</v>
@@ -182,14 +197,14 @@
 <v>GFV_LAB2\I2C_Experiment\CortexM3\ARM_GCC_541\Debug\Listing Files\I2C_1_PM.lst</v>
 <v>GFV_LAB2\I2C_Experiment\CortexM3\ARM_GCC_541\Debug\Listing Files\I2C_1_SLAVE.lst</v>
 <v>GFV_LAB2\I2C_Experiment\CortexM3\ARM_GCC_541\Debug\Listing Files\main.lst</v>
+<v>GFV_LAB2\I2C_Experiment\CortexM3\ARM_GCC_541\Debug\Listing Files\readTemp.lst</v>
 <v>GFV_LAB2\I2C_Experiment\CortexM3\ARM_GCC_541\Debug\Listing Files\SCL_1.lst</v>
 <v>GFV_LAB2\I2C_Experiment\CortexM3\ARM_GCC_541\Debug\Listing Files\SDA_1.lst</v>
+<v>GFV_LAB2\I2C_Experiment\CortexM3\ARM_GCC_541\Debug\Listing Files\twoComplementConverter.lst</v>
 <v>GFV_LAB2\I2C_Experiment\CortexM3\ARM_GCC_541\Debug\Listing Files\UART_1.lst</v>
 <v>GFV_LAB2\I2C_Experiment\CortexM3\ARM_GCC_541\Debug\Listing Files\UART_1_BOOT.lst</v>
 <v>GFV_LAB2\I2C_Experiment\CortexM3\ARM_GCC_541\Debug\Listing Files\UART_1_INT.lst</v>
 <v>GFV_LAB2\I2C_Experiment\CortexM3\ARM_GCC_541\Debug\Listing Files\UART_1_IntClock.lst</v>
-<v>GFV_LAB2\I2C_Experiment\CortexM3\ARM_GCC_541\Debug\Listing Files\UART_1_PM.lst</v>
-<v>GFV_LAB2\I2C_Experiment\CortexM3\ARM_GCC_541\Debug\Listing Files\ui.lst</v>
 </VisibleNodeIds>
 </CyGuid_2a325b3b-c96a-4e9f-b7a0-2c44ecb5f237>
 </TreeStates>
@@ -245,7 +260,7 @@
 </CyGuid_fdba8dfd-b15b-4469-9bbb-9e40c3e70997>
 <Unloaded />
 <OpenDocs>
-<name v=".\I2C_Experiment.cydsn\TopDesign\TopDesign.cysch" />
+<name v=".\I2C_Experiment.cydsn\main.c" />
 </OpenDocs>
 <OpenDocsLayout><![CDATA[<?xml version="1.0"?><!--
 
@@ -253,7 +268,7 @@
   Copyright (c) 2001-2016 Actipro Software LLC.  All rights reserved.
   http://www.actiprosoftware.com
 
---><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="693, 612" SelectedTabbedMdiWindow="5d302f5c-c911-4972-b29e-604571ec2bd4"><DocumentWindow Key="C:\OneDrive\Dokumenter\IKT\3. Semester\I3GFV\LAB 2 - Communication buses\GFV_LAB2\I2C_Experiment.cydsn\TopDesign\TopDesign.cysch" Guid="5d302f5c-c911-4972-b29e-604571ec2bd4" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
+--><DocumentLayout Version="1.0"><LayoutData><TabbedMdiRootContainer Orientation="Horizontal"><TabbedMdiContainer Size="947, 612" SelectedTabbedMdiWindow="a69f65a3-a3cc-42b8-b12d-862e34cfea68"><DocumentWindow Key="D:\git\gfvLab2\GFV_LAB2\I2C_Experiment.cydsn\main.c" Guid="a69f65a3-a3cc-42b8-b12d-862e34cfea68" /></TabbedMdiContainer></TabbedMdiRootContainer><FloatingContainers /></LayoutData></DocumentLayout>]]></OpenDocsLayout>
 <config v="" />
 <AutoUpdate v="true" />
 </CyGuid_843a90a4-0c4b-4e44-991d-05e7fb117a21>

@@ -1,65 +1,34 @@
-/* ========================================
- *
- * Copyright YOUR COMPANY, THE YEAR
- * All Rights Reserved
- * UNPUBLISHED, LICENSED SOFTWARE.
- *
- * CONFIDENTIAL AND PROPRIETARY INFORMATION
- * WHICH IS THE PROPERTY OF your company.
- *
- * ========================================
-*/
 #include "project.h"
-#include "stdio.h"
-#include "stdlib.h"
-#include "math.h"
-//#include "ui.h"
-
-void writeTempToUART(float temp);
+#include "writeTempToUART.h"
+#include "readTemp.h"
+#include "twoComplementConverter.h"
 
 int main(void)
 {
     CyGlobalIntEnable; /* Enable global interrupts. */
- 
+
+    int tempStore = 0;
+    float tempFinal = 0.0;
+
     UART_1_Start();
-    UART_1_PutString("I2C Experiment UART Driver Startet\r\n");
+    UART_1_PutString("I2C Experiment UART Driver Startet\n\r");
     I2C_1_Start();
-    UART_1_PutString("I2C Experiment I2C Driver Startet\r\n");
- 
-    uint8_t startStatus = 0;
-    uint8_t readByte1 = 0;
-    uint8_t readByte2 = 0;
-    char buffer[8];
+    UART_1_PutString("I2C Experiment I2C Driver Startet\n\n\r");
     
     for(;;)
     {
-        startStatus = I2C_1_MasterSendStart(0x48, 1);
+        // LM75_1:
+        tempStore = readTemp(0x48);
+        tempFinal = twoComplementConverter(&tempStore);
+        writeTempToUART(tempFinal,1);
         
-        if (I2C_1_MSTR_NO_ERROR == startStatus)
-        {
-            readByte1 = I2C_1_MasterReadByte(I2C_1_ACK_DATA);
-            readByte2 = I2C_1_MasterReadByte(I2C_1_NAK_DATA);
-        }
+        // LM75_2:
+        tempStore = readTemp(0x49);
+        tempFinal = twoComplementConverter(&tempStore);
+        writeTempToUART(tempFinal,2);
         
-        I2C_1_MasterSendStop();
+        UART_1_PutString("\n\r");
         
-//        if (I2C_1_MSTR_NO_ERROR == startStatus) UART_1_PutString("No error!\r\n");
-        
-        CyDelay(1000);     // Waits 1 sec.
-        
-//        UART_1_PutString(itoa(readByte2, buffer, 10));
-        if (itoa(readByte2, buffer, 10) == 0)
-            writeTempToUART((~readByte1 + 1) * -1);
-        else
-            writeTempToUART((~readByte1 + 1) * -1 + 0.5);
+        CyDelay(1000);
     }
-}
-
-void writeTempToUART(float temp)
-{
-    char outputBuffer[256];
-
-    snprintf(outputBuffer, sizeof(outputBuffer), "Temp: %3.1f \r\n", temp);
-
-    UART_1_PutString(outputBuffer);
 }
