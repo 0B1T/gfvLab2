@@ -11,16 +11,56 @@
 */
 #include "project.h"
 
+CY_ISR(SPI);
+void turnLedOn();
+void turnLedOff();
+
 int main(void)
 {
     CyGlobalIntEnable; /* Enable global interrupts. */
-
-    /* Place your initialization/startup code here (e.g. MyInst_Start()) */
+    
+    SPIM_2_Start();
+    UART_1_Start();
+    
+    UART_1_PutString("\r\nSPI Master startet\r\n");
+    UART_1_PutString("Press 'f' to turn LED off\r\n");
+    UART_1_PutString("Press 'o' to turn LED on\r\n");
+    isr_1_StartEx(SPI);
+    
 
     for(;;)
     {
-        /* Place your application code here. */
+        
+        
+        
     }
 }
 
-/* [] END OF FILE */
+CY_ISR(SPI)
+{
+    char LED = UART_1_GetChar();
+    UART_1_PutChar(LED);
+    
+    if(LED == 'o')
+    {
+        SPIM_2_ClearTxBuffer();
+        turnLedOn();
+        UART_1_PutString("\r\nLED turned on\r\n");
+    }
+    else if(LED == 'f')
+    {
+        SPIM_2_ClearTxBuffer();
+        turnLedOff();
+        UART_1_PutString("\r\nLED turned off\r\n");
+    }
+}
+
+void turnLedOn()
+{
+    SPIM_2_WriteTxData(0b11111111);
+}
+
+void turnLedOff()
+{
+    SPIM_2_WriteTxData(0b00000000);
+}
