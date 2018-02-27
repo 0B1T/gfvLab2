@@ -40,18 +40,27 @@ CY_ISR(SPI)
 {
     char LED = UART_1_GetChar();
     UART_1_PutChar(LED);
+    uint8 status;
     
     if(LED == 'o')
     {
         SPIM_2_ClearTxBuffer();
         turnLedOn();
-        UART_1_PutString("\r\nLED turned on\r\n");
+        UART_1_PutString("\r\nLED turning on\r\n");
+        //kode til at læse LED status
+        //status = SPIM_2_ReadRxData();
+        //if(status == 0b11111111)
+        //UART_1_PutString("LED is on\r\n");
     }
     else if(LED == 'f')
     {
         SPIM_2_ClearTxBuffer();
         turnLedOff();
         UART_1_PutString("\r\nLED turned off\r\n");
+        //kode til at læse LED status
+        //status = SPIM_2_ReadRxData();    
+        //if(status == 0b00000000)
+        //UART_1_PutString("LED is off\r\n");    
     }
 }
 
